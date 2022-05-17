@@ -9,6 +9,7 @@ import { SelectComponent } from './components/select/select.component';
 import { InputTypeNumberComponent } from './components/input-type-number/input-type-number.component';
 import { TransferDataComponent } from './components/transfer-data/transfer-data.component';
 import { InputTypeComponent } from './components/input-type/input-type.component';
+import { ItemsComponent } from './components/items/items.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { InputTypeComponent } from './components/input-type/input-type.component
     SelectComponent,
     InputTypeNumberComponent,
     TransferDataComponent,
-    InputTypeComponent
+    InputTypeComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,

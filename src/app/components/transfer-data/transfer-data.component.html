@@ -3,9 +3,21 @@
   <app-input-type [data]="question" [formGroup]="form"></app-input-type>
 
   <div *ngIf="question.childItems">
+    <!-- <app-items [formGroup]="form" [data]="question"></app-items> -->
     <div *ngFor="let data of question.childItems">
-      <div *ngIf="data.parentAnswer == form.get('question')?.value">
+      <div *ngIf="data.parentAnswer == form.get(question.formControlName)?.value">
         <app-input-type [data]="data" [formGroup]="form"></app-input-type>
+        {{question.formControlName}}
+              <div *ngFor="let item of data.childItems">
+                {{item.parentAnswer}}
+                <div *ngIf="item.parentAnswer == form.get(item.formControlName)?.value">
+                  <app-input-type [data]="item" [formGroup]="form"></app-input-type>
+                </div>
+
+
+
+              </div>
+
       </div>
     </div>
 

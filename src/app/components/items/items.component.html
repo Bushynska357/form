@@ -1,0 +1,5 @@
+<div *ngFor="let data of data.childItems" [formGroup]="form">
+  <div *ngIf="data.parentAnswer == form.get(data.formControlName)?.value">
+    <app-input-type [data]="data" [formGroup]="form"></app-input-type>
+  </div>
+</div>
