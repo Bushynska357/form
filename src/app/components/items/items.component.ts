@@ -8,6 +8,7 @@ import { ControlContainer, FormGroup } from '@angular/forms';
 })
 export class ItemsComponent implements OnInit {
   @Input() data:any;
+  @Input() compare:any;
   public form!: FormGroup;
 
   constructor(private controlContainer: ControlContainer) { }
