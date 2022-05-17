@@ -12,18 +12,18 @@ import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE
       useExisting: RadioComponent
     }
   ],
-host:{
-  '(change)':' onChange($event.target.value)'
-}
+  host: {
+    '(change)': ' onChange($event.target.value)'
+  }
 
 })
 export class RadioComponent extends RadioControlValueAccessor implements OnInit {
   @Input() override value = 0;
 
 
-  override onChange = () => {};
+  override onChange = () => { };
 
-  override onTouched = () => {};
+  override onTouched = () => { };
 
   override writeValue(value: any): void {
     console.log(value);
@@ -38,7 +38,7 @@ export class RadioComponent extends RadioControlValueAccessor implements OnInit 
     this.onTouched = onTouched;
   }
 
-  override fireUncheck(value:any){
+  override fireUncheck(value: any) {
     console.log(value);
 
     this.value = value;
