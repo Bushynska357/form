@@ -1,15 +1,21 @@
+<div [ngSwitch]="question.type" [formGroup]="form">
 
-<!-- <form >
-  <div [ngSwitch]="data.type">
-    <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' formControlName="formControlFirst"></app-input-type-number>
-    <app-radio *ngSwitchCase="'radio'" [title]='data.title' formControlName="formControlSecond"></app-radio>
-     <div *ngIf="data.childItems">
-      <div *ngFor="let data of data.childItems">
-        {{data.parentAnswer}}
-  <div *ngIf="data.parentAnswer == '1'">{{"dsdsd"}}</div>
+  <app-input-type-number *ngSwitchCase="'number'" [title]='question.title' [formControlName]="question.formControlName"></app-input-type-number>
+  <app-radio *ngSwitchCase="'radio'" [title]='question.title' [formControlName]="question.formControlName"></app-radio>
+
+  <div *ngIf="question.childItems">
+    <div *ngFor="let data of question.childItems">
+      <div *ngIf="data.parentAnswer == form.get('question')?.value">
+        <div [ngSwitch]="data.type" >
+          <app-select *ngSwitchCase="'select'" [title]='data.title' [formControlName]="data.formControlName" [items]='data.options'></app-select>
+          <app-input-type-number *ngSwitchCase="'number'" [title]='question.title' [formControlName]="data.formControlName"></app-input-type-number>
+          <app-radio *ngSwitchCase="'radio'" [title]='data.title' [formControlName]="data.formControlName"></app-radio>
+        </div>
+
       </div>
     </div>
+
   </div>
-</form> -->
+</div>
 
 

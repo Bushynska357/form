@@ -22,15 +22,17 @@ export class AppComponent implements OnInit{
     this.form = this.fb.group({
       question: ['Yes', Validators.required],
       age:[],
-
       medicine:[],
-      isWaterExist:[]
+      pills:[],
+      water:[]
+      // form2:this.fb.group({})
+
     });
   }
 
   submit(){
-    console.log(this.form.get('question')?.value);
-    console.log(this.form.get('age')?.value);
+    console.log('question',this.form.get('question')?.value);
+    console.log('age',this.form.get('age')?.value);
     console.log(this.form.get('medicine')?.value);
     console.log(this.form.get('form2'));
 

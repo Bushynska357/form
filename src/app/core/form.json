@@ -2,16 +2,19 @@
   "patientQuestions": [
     {
       "title": "Age",
-      "type": "number"
+      "type": "number",
+      "formControlName":"age"
     },
     {
       "title": "Are you using any heart medications ?",
       "type": "radio",
+      "formControlName":"question",
       "childItems": [
         {
           "parentAnswer": "1",
           "title": "Select medication",
           "type": "select",
+          "formControlName":"medicine",
           "options": [
             "Accupril",
             "Aceon (perindopril)",
@@ -26,10 +29,12 @@
             {
               "parentAnswer": "Aspirin",
               "title": "How many times did you tooks Aspirin today?",
+              "formControlName":"pills",
               "type": "number"
             },
             {
               "title": "Did you had any water today?",
+              "formControlName":"water",
               "type": "radio",
               "childItems": [
                 {

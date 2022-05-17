@@ -1,6 +1,7 @@
 export interface PatientQuestions{
   title:string,
   type:string,
+  formControlName:string,
   childItems?:CheckQuestion[]
 }
 

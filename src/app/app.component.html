@@ -1,5 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <ng-container *ngFor="let question of data.patientQuestions;">
-    <app-transfer-data [question]='question'></app-transfer-data>
+    <app-transfer-data [question]='question' [formGroup]="form"></app-transfer-data>
   </ng-container>
+  <button type="submit">submit</button>
   </form>
