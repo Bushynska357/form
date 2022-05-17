@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from './core/data.service';
 import * as data from './core/form.json';
+import { PatientQuestions } from './core/models/model';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +13,16 @@ export class AppComponent implements OnInit{
   data:any;
   title = 'test-project';
   form!: FormGroup;
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, public dataService:DataService){}
+
   ngOnInit(): void {
     this.data = data;
-    console.log(this.data);
+
 
     this.form = this.fb.group({
       question: ['Yes', Validators.required],
       age:[],
+
       medicine:[],
       isWaterExist:[]
     });
@@ -28,5 +32,7 @@ export class AppComponent implements OnInit{
     console.log(this.form.get('question')?.value);
     console.log(this.form.get('age')?.value);
     console.log(this.form.get('medicine')?.value);
+    console.log(this.form.get('form2'));
+
   }
 }
