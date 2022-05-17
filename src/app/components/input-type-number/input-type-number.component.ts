@@ -13,7 +13,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ],
   host: {
-    '(change)': ' onChange($event.target.value)'
+    '(change)': 'onChange($event.target.value)'
   }
 })
 export class InputTypeNumberComponent implements OnInit, ControlValueAccessor {
