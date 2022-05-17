@@ -20,14 +20,6 @@ export class SelectComponent extends SelectControlValueAccessor implements OnIni
   @Input() title!:string;
   @Input() items!:string;
 
-  // constructor() { }
-  // states = [
-  //   {name: 'Arizona', abbrev: 'AZ'},
-  //   {name: 'California', abbrev: 'CA'},
-  //   {name: 'Colorado', abbrev: 'CO'},
-  //   {name: 'New York', abbrev: 'NY'},
-  //   {name: 'Pennsylvania', abbrev: 'PA'},
-  // ];
 
   ngOnInit(): void {
   }
@@ -38,7 +30,7 @@ export class SelectComponent extends SelectControlValueAccessor implements OnIni
   override onTouched = () => {};
 
   override writeValue(value: any): void {
-    console.log(value);
+    // console.log(value);
     this.value = value;
   }
 
