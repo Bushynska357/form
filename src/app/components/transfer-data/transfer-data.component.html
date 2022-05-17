@@ -1,17 +1,11 @@
 <div [ngSwitch]="question.type" [formGroup]="form">
 
-  <app-input-type-number *ngSwitchCase="'number'" [title]='question.title' [formControlName]="question.formControlName"></app-input-type-number>
-  <app-radio *ngSwitchCase="'radio'" [title]='question.title' [formControlName]="question.formControlName"></app-radio>
+  <app-input-type [data]="question" [formGroup]="form"></app-input-type>
 
   <div *ngIf="question.childItems">
     <div *ngFor="let data of question.childItems">
       <div *ngIf="data.parentAnswer == form.get('question')?.value">
-        <div [ngSwitch]="data.type" >
-          <app-select *ngSwitchCase="'select'" [title]='data.title' [formControlName]="data.formControlName" [items]='data.options'></app-select>
-          <app-input-type-number *ngSwitchCase="'number'" [title]='question.title' [formControlName]="data.formControlName"></app-input-type-number>
-          <app-radio *ngSwitchCase="'radio'" [title]='data.title' [formControlName]="data.formControlName"></app-radio>
-        </div>
-
+        <app-input-type [data]="data" [formGroup]="form"></app-input-type>
       </div>
     </div>
 

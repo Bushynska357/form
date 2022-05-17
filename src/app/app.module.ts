@@ -8,6 +8,7 @@ import { RadioComponent } from './components/radio/radio.component';
 import { SelectComponent } from './components/select/select.component';
 import { InputTypeNumberComponent } from './components/input-type-number/input-type-number.component';
 import { TransferDataComponent } from './components/transfer-data/transfer-data.component';
+import { InputTypeComponent } from './components/input-type/input-type.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TransferDataComponent } from './components/transfer-data/transfer-data.
     RadioComponent,
     SelectComponent,
     InputTypeNumberComponent,
-    TransferDataComponent
+    TransferDataComponent,
+    InputTypeComponent
   ],
   imports: [
     BrowserModule,
