@@ -1,6 +1,6 @@
 <div *ngIf="data.parentAnswer == form.get(compare.formControlName)?.value">
   <app-input-type [data]="data" [formGroup]="form"></app-input-type>
-  {{compare.formControlName}}
+  <!-- {{compare.formControlName}} -->
         <!-- <div *ngFor="let item of data.childItems">
           {{item.parentAnswer}}
           <div *ngIf="item.parentAnswer == form.get(item.formControlName)?.value">
@@ -12,3 +12,8 @@
         </div> -->
 
 </div>
+
+<div *ngIf="data.parentAnswer == ''">
+  <app-input-type [data]="data" [formGroup]="form"></app-input-type>
+</div>
+

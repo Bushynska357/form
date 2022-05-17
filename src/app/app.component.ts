@@ -24,7 +24,8 @@ export class AppComponent implements OnInit{
       age:[],
       medicine:[],
       pills:[],
-      water:[]
+      water:[],
+      answerWater:[]
       // form2:this.fb.group({})
 
     });

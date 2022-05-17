@@ -33,6 +33,7 @@
               "type": "number"
             },
             {
+              "parentAnswer":"",
               "title": "Did you had any water today?",
               "formControlName":"water",
               "type": "radio",
@@ -40,7 +41,8 @@
                 {
                   "parentAnswer": "1",
                   "title": "Did you drunk more then 1 liter of water today?",
-                  "type": "radio"
+                  "type": "radio",
+                  "formControlName":"answerWater"
                 }
               ]
             }

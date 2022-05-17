@@ -4,30 +4,25 @@
 
   <div *ngIf="question.childItems">
 
+
     <div *ngFor="let data of question.childItems">
+
       <app-items [formGroup]="form" [data]="data" [compare]='question'></app-items>
 
-      <div *ngFor="let item of data.childItems">
-        {{item.parentAnswer}}
+      <div *ngIf="data.childItems">
+
+        <div *ngFor="let item of data.childItems">
+          <app-items [formGroup]="form" [data]="item" [compare]='data'></app-items>
+
+          <div *ngFor="let i of item.childItems">
+            <app-items [formGroup]="form" [data]="i" [compare]='item'></app-items>
+          </div>
+
+        </div>
 
       </div>
-      <!-- <div *ngIf="data.parentAnswer == form.get(question.formControlName)?.value">
-        <app-input-type [data]="data" [formGroup]="form"></app-input-type>
-        {{question.formControlName}}
-              <div *ngFor="let item of data.childItems">
-                {{item.parentAnswer}}
-                <div *ngIf="item.parentAnswer == form.get(item.formControlName)?.value">
-                  <app-input-type [data]="item" [formGroup]="form"></app-input-type>
-                </div>
 
 
 
-              </div>
-
-      </div> -->
     </div>
-
   </div>
-</div>
-
-
