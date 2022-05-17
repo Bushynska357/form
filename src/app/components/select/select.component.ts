@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -17,15 +17,17 @@ import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
   }
 })
 export class SelectComponent extends SelectControlValueAccessor implements OnInit {
+  @Input() title!:string;
+  @Input() items!:string;
 
   // constructor() { }
-  states = [
-    {name: 'Arizona', abbrev: 'AZ'},
-    {name: 'California', abbrev: 'CA'},
-    {name: 'Colorado', abbrev: 'CO'},
-    {name: 'New York', abbrev: 'NY'},
-    {name: 'Pennsylvania', abbrev: 'PA'},
-  ];
+  // states = [
+  //   {name: 'Arizona', abbrev: 'AZ'},
+  //   {name: 'California', abbrev: 'CA'},
+  //   {name: 'Colorado', abbrev: 'CO'},
+  //   {name: 'New York', abbrev: 'NY'},
+  //   {name: 'Pennsylvania', abbrev: 'PA'},
+  // ];
 
   ngOnInit(): void {
   }

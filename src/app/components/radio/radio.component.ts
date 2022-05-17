@@ -19,7 +19,7 @@ import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE
 })
 export class RadioComponent extends RadioControlValueAccessor implements OnInit {
   @Input() override value = 0;
-
+  @Input() title!:string;
 
   override onChange = () => { };
 

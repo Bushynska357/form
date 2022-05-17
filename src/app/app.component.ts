@@ -8,15 +8,19 @@ import * as data from './core/form.json';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-
+  data:any;
   title = 'test-project';
   form!: FormGroup;
   constructor(private fb: FormBuilder){}
   ngOnInit(): void {
+    this.data = data;
+    console.log(this.data);
+
     this.form = this.fb.group({
       question: ['Yes', Validators.required],
       age:[],
-      medicine:[]
+      medicine:[],
+      isWaterExist:[]
     });
   }
 

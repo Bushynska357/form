@@ -1,6 +1,85 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <app-radio formControlName='question'></app-radio>
-  <app-select formControlName='medicine'></app-select>
-  <app-input-type-number formControlName='age'></app-input-type-number>
+  <div *ngFor="let data of data.patientQuestions">
+    <div [ngSwitch]="data.type">
+      <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' formControlName='age'></app-input-type-number>
+      <app-radio *ngSwitchCase="'radio'" [title]='data.title' formControlName='question'></app-radio>
+
+      <div *ngIf='data.childItems '>
+         <div *ngFor="let data of data.childItems">
+          <div *ngIf="data.parentAnswer == form.get('question')?.value">
+
+            <div *ngIf="data">
+
+              <div [ngSwitch]="data.type">
+                <app-radio *ngSwitchCase="'radio'" [title]='data.title' ></app-radio>
+                <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' ></app-input-type-number>
+                <div *ngSwitchCase="'select'" >
+                    <app-select [title]='data.title' [items]='data.options' formControlName='medicine'></app-select>
+                </div>
+
+                <div [ngSwitch]="data.type">
+                  <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' formControlName=''></app-input-type-number>
+                  <app-radio *ngSwitchCase="'radio'" [title]='data.title' formControlName='isWaterExist'></app-radio>
+
+                   <div *ngIf='data.childItems '>
+                  <div *ngFor="let data of data.childItems">
+                    {{data.parentAnswer}}
+                   <div *ngIf="data.parentAnswer == form.get('medicine')?.value">
+
+                     <div *ngIf="data">
+
+                       <div [ngSwitch]="data.type">
+                         <app-radio *ngSwitchCase="'radio'" [title]='data.title' ></app-radio>
+                         <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' ></app-input-type-number>
+                         <div *ngSwitchCase="'select'" >
+                             <app-select [title]='data.title' [items]='data.options' formControlName=''></app-select>
+                         </div>
+                       </div>
+
+                     </div>
+                   </div>
+
+                 </div>
+
+               </div>
+
+                </div>
+                <!-- <div *ngIf='data.childItems '>
+                  <div *ngFor="let data of data.childItems">
+                   <div *ngIf="data.parentAnswer == form.get('medicine')?.value">
+
+                     <div *ngIf="data">
+
+                       <div [ngSwitch]="data.type">
+                         <app-radio *ngSwitchCase="'radio'" [title]='data.title' ></app-radio>
+                         <app-input-type-number *ngSwitchCase="'number'" [title]='data.title' ></app-input-type-number>
+                         <div *ngSwitchCase="'select'" >
+                             <app-select [title]='data.title' [items]='data.options' formControlName=''></app-select>
+                         </div>
+                       </div>
+
+                     </div>
+                   </div>
+
+                 </div>
+
+               </div> -->
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
   <button type="submit">submit</button>
 </form>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -17,6 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   }
 })
 export class InputTypeNumberComponent implements OnInit, ControlValueAccessor {
+  @Input() title!:string;
   onChange = () => {};
   onTouched = () => {};
   constructor() { }
