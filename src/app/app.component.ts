@@ -14,13 +14,14 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.fb.group({
       question: ['Yes', Validators.required],
-      age:[]
+      age:[],
+      medicine:[]
     });
   }
 
   submit(){
     console.log(this.form.get('question')?.value);
     console.log(this.form.get('age')?.value);
-
+    console.log(this.form.get('medicine')?.value);
   }
 }
