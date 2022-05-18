@@ -21,7 +21,7 @@ export class TransferDataComponent implements OnInit {
     // throw new Error('Method not implemented.');
 
     this.form = <FormGroup>this.controlContainer.control;
-    console.log('transfer-data', this.form);
+    // console.log('transfer-data', this.form);
   }
 
 

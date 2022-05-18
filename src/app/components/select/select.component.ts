@@ -30,7 +30,7 @@ export class SelectComponent extends SelectControlValueAccessor implements OnIni
   override onTouched = () => {};
 
   override writeValue(value: any): void {
-    // console.log(value);
+    console.log(value);
     this.value = value;
   }
 

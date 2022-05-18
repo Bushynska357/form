@@ -44,6 +44,7 @@
                   "parentAnswer": "1",
                   "title": "Did you drunk more then 1 liter of water today?",
                   "type": "radio",
+
                   "formControlName":"answerWater"
                 }
               ]

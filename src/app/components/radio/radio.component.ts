@@ -1,4 +1,4 @@
-import { Component, ElementRef, Injector, Input, OnInit, Renderer2, Self, } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ContentChild, DoCheck, ElementRef, Injector, Input, OnInit, Renderer2, Self, } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE_ACCESSOR, RadioControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -10,26 +10,29 @@ import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE
       provide: NG_VALUE_ACCESSOR,
       multi: true,
       useExisting: RadioComponent
-    }
+    },
+
   ],
+
   host: {
-    '(change)': ' onChange($event.target.value)'
+  '[attr.disabled]': 'disabled || null',
+  '[readonly]': 'readonly',
+  '[value]': 'value',
+  '(change)':'onChange($event.target.value)'
   }
 
 })
-export class RadioComponent extends RadioControlValueAccessor implements OnInit {
-  @Input() override value = 0;
+export  class RadioComponent extends RadioControlValueAccessor implements OnInit {
+
+  @Input() override name:any;
   @Input() title!:string;
 
-  override onChange = () => {
-    console.log('aaaaaaaaaaaaa');
-   };
+  override onChange = () => {};
 
   override onTouched = () => { };
 
   override writeValue(value: any): void {
-    console.log(value);
-    this.value = value;
+     this.value = value;
   }
 
   override registerOnChange(onChange: any) {
@@ -41,8 +44,6 @@ export class RadioComponent extends RadioControlValueAccessor implements OnInit 
   }
 
   override fireUncheck(value: any) {
-    console.log(value);
-
-    this.value = value;
+    this.writeValue(value);
   }
 }

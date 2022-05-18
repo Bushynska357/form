@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,12 @@ import { SelectComponent } from './components/select/select.component';
 import { InputTypeNumberComponent } from './components/input-type-number/input-type-number.component';
 import { TransferDataComponent } from './components/transfer-data/transfer-data.component';
 import { InputTypeComponent } from './components/input-type/input-type.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatRadioModule} from '@angular/material/radio';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,15 @@ import { InputTypeComponent } from './components/input-type/input-type.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NoopAnimationsModule,
+    FormsModule,
+
+
+    MatRadioModule,
+    MatInputModule,
+    MatCheckboxModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
