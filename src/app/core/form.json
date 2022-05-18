@@ -8,6 +8,7 @@
     {
       "title": "Are you using any heart medications ?",
       "type": "radio",
+      "value":["1","2"],
       "formControlName":"question",
       "childItems": [
         {
@@ -37,6 +38,7 @@
               "title": "Did you had any water today?",
               "formControlName":"water",
               "type": "radio",
+              "value":["1","2"],
               "childItems": [
                 {
                   "parentAnswer": "1",

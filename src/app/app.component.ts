@@ -32,10 +32,8 @@ export class AppComponent implements OnInit{
   }
 
   submit(){
-    console.log('question',this.form.get('question')?.value);
-    console.log('age',this.form.get('age')?.value);
-    console.log(this.form.get('medicine')?.value);
-    console.log(this.form.get('form2'));
+ console.log(this.form);
+
 
   }
 }

@@ -21,7 +21,9 @@ export class RadioComponent extends RadioControlValueAccessor implements OnInit 
   @Input() override value = 0;
   @Input() title!:string;
 
-  override onChange = () => { };
+  override onChange = () => {
+    console.log('aaaaaaaaaaaaa');
+   };
 
   override onTouched = () => { };
 

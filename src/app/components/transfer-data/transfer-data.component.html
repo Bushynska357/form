@@ -1,28 +1,15 @@
-<div [ngSwitch]="question.type" [formGroup]="form">
+<div [formGroup]="form">
 
-  <app-input-type [data]="question" [formGroup]="form"></app-input-type>
-
-  <div *ngIf="question.childItems">
-
-
-    <div *ngFor="let data of question.childItems">
-
-      <app-items [formGroup]="form" [data]="data" [compare]='question'></app-items>
-
-      <div *ngIf="data.childItems">
-
-        <div *ngFor="let item of data.childItems">
-          <app-items [formGroup]="form" [data]="item" [compare]='data'></app-items>
-
-          <div *ngFor="let i of item.childItems">
-            <app-items [formGroup]="form" [data]="i" [compare]='item'></app-items>
-          </div>
-
-        </div>
-
-      </div>
+  <!-- Age -->
+  <ng-container *ngIf="question.parentAnswer == parentAnswer || !question.parentAnswer">
+    <app-input-type [data]="question" [formGroup]="form"></app-input-type>
 
 
-
+    <div *ngIf="question.childItems">
+      <ng-container *ngFor="let q of question.childItems;">
+        <app-transfer-data [question]='q' [formGroup]="form" [parentAnswer]="form.get(question.formControlName)?.value">
+        </app-transfer-data>
+      </ng-container>
     </div>
-  </div>
+  </ng-container>
+</div>

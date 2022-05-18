@@ -11,6 +11,7 @@ import { CheckQuestion, PatientQuestions } from 'src/app/core/models/model';
 })
 export class TransferDataComponent implements OnInit {
   @Input()question!:any;
+  @Input() parentAnswer!: any;
   // @Input()group!:FormGroup;
   public form!: FormGroup;
 
