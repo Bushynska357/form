@@ -1,0 +1,6 @@
+<select>
+  <option value="Select">{{title}}</option>
+  <option *ngFor="let state of items" [ngValue]="state">
+    {{ state }}
+  </option>
+</select>

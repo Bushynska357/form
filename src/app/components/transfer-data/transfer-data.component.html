@@ -1,0 +1,15 @@
+<div [formGroup]="form">
+
+  <!-- Age -->
+  <ng-container *ngIf="question.parentAnswer == parentAnswer || !question.parentAnswer">
+    <app-input-type [data]="question" [formGroup]="form"></app-input-type>
+
+
+    <div *ngIf="question.childItems">
+      <ng-container *ngFor="let q of question.childItems;">
+        <app-transfer-data [question]='q' [formGroup]="form" [parentAnswer]="form.get(question.formControlName)?.value">
+        </app-transfer-data>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>
