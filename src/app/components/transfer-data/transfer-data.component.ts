@@ -9,7 +9,7 @@ import { CheckQuestion } from 'src/app/core/models/model';
 })
 export class TransferDataComponent implements OnInit {
   @Input()question!:any;
-  @Input() parentAnswer!: string;
+  @Input() parentAnswer!: string | undefined;
   public form!: FormGroup;
 
   constructor(private controlContainer: ControlContainer){}

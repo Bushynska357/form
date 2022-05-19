@@ -8,9 +8,10 @@ describe('TransferDataComponent', () => {
   let fixture: ComponentFixture<TransferDataComponent>;
 
 
+
   const fg: FormGroup = new FormGroup({});
   const fgd: FormGroupDirective = new FormGroupDirective([], []);
-fgd.form = fg;
+  fgd.form = fg;
 
 
   beforeEach(async () => {
@@ -31,10 +32,22 @@ fgd.form = fg;
   beforeEach(() => {
     fixture = TestBed.createComponent(TransferDataComponent);
     component = fixture.componentInstance;
+    component.parentAnswer= 'value';
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should show TEST INPUT', () => {
+    component.parentAnswer = 'test input';
+
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('div').innerText).toEqual('TEST INPUT');
+  });
+
+
 });
