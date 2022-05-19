@@ -1,5 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
-import * as data from './form.json';
+import { FormGroup } from '@angular/forms';
+import data from './form.json';
 import { Model } from './models/model';
 
 @Injectable({
@@ -7,11 +8,13 @@ import { Model } from './models/model';
 })
 export class DataService{
 
-  get data(): Model { return data; }
+  get data(): Model {return data; }
 
-  sendForm(form:any){
+  sendForm(form:FormGroup){
     console.log(form);
+    return form;
   }
+
 
 
 
