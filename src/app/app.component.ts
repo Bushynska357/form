@@ -12,6 +12,7 @@ import { Model, PatientQuestions } from './core/models/model';
 export class AppComponent implements OnInit {
   data!:any;
   form!: FormGroup;
+  title = 'test-project';
 
   constructor(private fb: FormBuilder, public dataService: DataService) { }
 

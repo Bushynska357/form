@@ -1,5 +1,6 @@
 import { Component,  Input, OnInit, } from '@angular/core';
 import { ControlContainer, FormGroup } from '@angular/forms';
+import { CheckQuestion } from 'src/app/core/models/model';
 
 @Component({
   selector: 'app-transfer-data',
@@ -8,7 +9,7 @@ import { ControlContainer, FormGroup } from '@angular/forms';
 })
 export class TransferDataComponent implements OnInit {
   @Input()question!:any;
-  @Input() parentAnswer!: any;
+  @Input() parentAnswer!: string;
   public form!: FormGroup;
 
   constructor(private controlContainer: ControlContainer){}

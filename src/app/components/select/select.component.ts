@@ -18,7 +18,7 @@ import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
 })
 export class SelectComponent extends SelectControlValueAccessor{
   @Input() title!:string;
-  @Input() items!:string;
+  @Input() items!:string[] | undefined;
 
 
   override onChange = () => {};

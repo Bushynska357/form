@@ -16,7 +16,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { DataService } from './core/data.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,8 +29,9 @@ import { DataService } from './core/data.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NoopAnimationsModule,
     FormsModule,
+    NoopAnimationsModule,
+
 
 
     MatRadioModule,
@@ -39,7 +39,7 @@ import { DataService } from './core/data.service';
     MatCheckboxModule
 
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

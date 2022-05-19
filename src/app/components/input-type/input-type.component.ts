@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ControlContainer, FormGroup } from '@angular/forms';
+import { CheckQuestion } from 'src/app/core/models/model';
 
 @Component({
   selector: 'app-input-type',
@@ -7,12 +8,13 @@ import { ControlContainer, FormGroup } from '@angular/forms';
   styleUrls: ['./input-type.component.scss']
 })
 export class InputTypeComponent implements OnInit {
-  @Input() data:any;
+  @Input() data!:CheckQuestion;
   public form!: FormGroup;
 
   constructor(private controlContainer: ControlContainer) { }
 
   ngOnInit(): void {
+
     this.form = <FormGroup>this.controlContainer.control;
   }
 

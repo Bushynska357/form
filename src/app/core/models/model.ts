@@ -9,7 +9,8 @@ export interface CheckQuestion{
   parentAnswer?: string,
   title: string,
   type: string,
-  options?: string[],
+  formControlName:string,
+  options?: string[] | undefined,
   childItems?: CheckQuestion[]
 }
 
