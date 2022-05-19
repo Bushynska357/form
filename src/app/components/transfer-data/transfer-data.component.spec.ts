@@ -32,7 +32,7 @@ describe('TransferDataComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TransferDataComponent);
     component = fixture.componentInstance;
-    component.parentAnswer= 'value';
+
 
     fixture.detectChanges();
   });
@@ -42,12 +42,7 @@ describe('TransferDataComponent', () => {
   });
 
 
-  it('should show TEST INPUT', () => {
-    component.parentAnswer = 'test input';
 
-    fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('div').innerText).toEqual('TEST INPUT');
-  });
 
 
 });
