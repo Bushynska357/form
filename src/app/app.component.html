@@ -2,5 +2,5 @@
   <ng-container *ngFor="let question of data.patientQuestions;">
     <app-transfer-data [question]='question' [formGroup]="form" [parentAnswer]="form.get(question.formControlName)?.value"></app-transfer-data>
   </ng-container>
-  <button type="submit">submit</button>
+  <button type="submit" [disabled]="form.invalid">submit</button>
 </form>

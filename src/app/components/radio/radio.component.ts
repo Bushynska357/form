@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, ContentChild, DoCheck, ElementRef, Injector, Input, OnInit, Renderer2, Self, } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE_ACCESSOR, RadioControlValueAccessor } from '@angular/forms';
+import {  Component, Input, OnInit} from '@angular/core';
+import { NG_VALUE_ACCESSOR, RadioControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-radio',
@@ -11,13 +11,9 @@ import { AbstractControl, ControlValueAccessor, FormControl, NgControl, NG_VALUE
       multi: true,
       useExisting: RadioComponent
     },
-
   ],
 
   host: {
-  '[attr.disabled]': 'disabled || null',
-  '[readonly]': 'readonly',
-  '[value]': 'value',
   '(change)':'onChange($event.target.value)'
   }
 

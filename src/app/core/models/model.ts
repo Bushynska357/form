@@ -13,3 +13,6 @@ export interface CheckQuestion{
   childItems?: CheckQuestion[]
 }
 
+export interface Model{
+  patientQuestions:PatientQuestions[]
+}

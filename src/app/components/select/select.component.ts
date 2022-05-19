@@ -16,13 +16,9 @@ import { NG_VALUE_ACCESSOR, SelectControlValueAccessor } from '@angular/forms';
     '(change)': ' onChange($event.target.value)'
   }
 })
-export class SelectComponent extends SelectControlValueAccessor implements OnInit {
+export class SelectComponent extends SelectControlValueAccessor{
   @Input() title!:string;
   @Input() items!:string;
-
-
-  ngOnInit(): void {
-  }
 
 
   override onChange = () => {};
@@ -30,7 +26,6 @@ export class SelectComponent extends SelectControlValueAccessor implements OnIni
   override onTouched = () => {};
 
   override writeValue(value: any): void {
-    console.log(value);
     this.value = value;
   }
 

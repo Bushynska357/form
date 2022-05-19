@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     '(change)': 'onChange($event.target.value)'
   }
 })
-export class InputTypeNumberComponent implements OnInit, ControlValueAccessor {
+export class InputTypeNumberComponent implements ControlValueAccessor {
   @Input() title!:string;
   onChange = () => {};
   onTouched = () => {};
@@ -30,7 +30,5 @@ export class InputTypeNumberComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  ngOnInit(): void {
-  }
 
 }

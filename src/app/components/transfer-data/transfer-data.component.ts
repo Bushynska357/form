@@ -1,10 +1,7 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
-import { ControlContainer, FormBuilder, FormGroup } from '@angular/forms';
-import { CheckQuestion, PatientQuestions } from 'src/app/core/models/model';
-
+import { Component,  Input, OnInit, } from '@angular/core';
+import { ControlContainer, FormGroup } from '@angular/forms';
 
 @Component({
-
   selector: 'app-transfer-data',
   templateUrl: './transfer-data.component.html',
   styleUrls: ['./transfer-data.component.scss']
@@ -12,16 +9,12 @@ import { CheckQuestion, PatientQuestions } from 'src/app/core/models/model';
 export class TransferDataComponent implements OnInit {
   @Input()question!:any;
   @Input() parentAnswer!: any;
-  // @Input()group!:FormGroup;
   public form!: FormGroup;
 
-
   constructor(private controlContainer: ControlContainer){}
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
 
+  ngOnInit(): void {
     this.form = <FormGroup>this.controlContainer.control;
-    // console.log('transfer-data', this.form);
   }
 
 
