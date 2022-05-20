@@ -32,8 +32,6 @@ describe('TransferDataComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TransferDataComponent);
     component = fixture.componentInstance;
-
-
     fixture.detectChanges();
   });
 
