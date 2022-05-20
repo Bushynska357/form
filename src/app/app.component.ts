@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DataService } from './core/data.service';
+import { DataService } from './core/services/data.service';
 import * as data from './core/form.json';
 import { Model, PatientQuestions } from './core/models/model';
 

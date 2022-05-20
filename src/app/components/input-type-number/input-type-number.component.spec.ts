@@ -6,6 +6,7 @@ import { InputTypeNumberComponent } from './input-type-number.component';
 describe('InputTypeNumberComponent', () => {
   let component: InputTypeNumberComponent;
   let fixture: ComponentFixture<InputTypeNumberComponent>;
+  let equal: boolean;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -13,9 +14,9 @@ describe('InputTypeNumberComponent', () => {
         ReactiveFormsModule,
         FormsModule
       ],
-      declarations: [ InputTypeNumberComponent ]
+      declarations: [InputTypeNumberComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -27,4 +28,14 @@ describe('InputTypeNumberComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('label should equal id', () => {
+
+    let label = fixture.nativeElement.querySelector('label').getAttribute('for').value;
+    let input = fixture.nativeElement.querySelector('input').getAttribute('id').value;
+
+    expect(label).toEqual(input);
+  });
+
 });

@@ -1,5 +1,5 @@
-<div [ngSwitch]="data.type" [formGroup]="form" class="test">
-  <app-select  *ngSwitchCase="'select'" [title]='data.title' [formControlName]="data.formControlName" [items]='data.options'></app-select>
-  <app-input-type-number  *ngSwitchCase="'number'" [title]='data.title' [formControlName]="data.formControlName"></app-input-type-number>
-  <app-radio  *ngSwitchCase="'radio'" [title]='data.title' [formControlName]="data.formControlName"  [name]='data.formControlName' ></app-radio>
+<div [ngSwitch]="data?.type" [formGroup]="form" class="test">
+  <app-select  *ngSwitchCase="'select'" [title]='data.title' formControlName="{{data.formControlName}}" [items]='data.options'></app-select>
+  <app-input-type-number  *ngSwitchCase="'number'" [title]='data.title' formControlName="{{data.formControlName}}"></app-input-type-number>
+  <app-radio  *ngSwitchCase="'radio'" [title]='data.title' formControlName="{{data.formControlName}}"  [name]='data.formControlName' ></app-radio>
 </div>

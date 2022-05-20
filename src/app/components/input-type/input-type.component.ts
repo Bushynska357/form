@@ -11,6 +11,7 @@ export class InputTypeComponent implements OnInit {
   @Input() data!:CheckQuestion;
   public form!: FormGroup;
 
+
   constructor(private controlContainer: ControlContainer) { }
 
   ngOnInit(): void {

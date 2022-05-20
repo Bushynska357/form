@@ -20,7 +20,7 @@ export class InputTypeNumberComponent implements ControlValueAccessor {
   @Input() title!:string;
   onChange = () => {};
   onTouched = () => {};
-  constructor() { }
+  constructor() {}
 
   writeValue(obj: any): void {}
   registerOnChange(fn: any): void {

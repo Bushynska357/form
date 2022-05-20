@@ -7,10 +7,9 @@ describe('TransferDataComponent', () => {
   let component: TransferDataComponent;
   let fixture: ComponentFixture<TransferDataComponent>;
 
-
   const fg: FormGroup = new FormGroup({});
   const fgd: FormGroupDirective = new FormGroupDirective([], []);
-fgd.form = fg;
+  fgd.form = fg;
 
 
   beforeEach(async () => {
@@ -37,4 +36,6 @@ fgd.form = fg;
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });
