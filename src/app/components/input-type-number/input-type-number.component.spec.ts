@@ -35,12 +35,7 @@ describe('InputTypeNumberComponent', () => {
     let label = fixture.nativeElement.querySelector('label').getAttribute('for').value;
     let input = fixture.nativeElement.querySelector('input').getAttribute('id').value;
 
-    if (label == input) {
-      equal = true;
-    } else {
-      equal = false;
-    }
-    expect(equal).toBe(true)
+    expect(label).toEqual(input);
   });
 
 });
