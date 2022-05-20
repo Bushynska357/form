@@ -6,9 +6,13 @@ import { Model } from './models/model';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService{
+export class DataService implements OnInit{
+  ngOnInit(): void {
+
+  }
 
   get data(): Model {return data; }
+
 
   sendForm(form:FormGroup){
     console.log(form);

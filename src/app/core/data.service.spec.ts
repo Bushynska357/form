@@ -7,7 +7,7 @@ import { Model,PatientQuestions } from './models/model';
 
 describe('DataService', () => {
   let service: DataService;
-  let data: Model;
+  // let data: Model;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -20,8 +20,9 @@ describe('DataService', () => {
 
 
 
-  it('#data is json', () =>{
-
+  it('should get data', () =>{
+      expect(service.data).toBeTruthy();
   })
+
 
 });

@@ -61,6 +61,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('test-project');
   });
 
+  it('should create a FormGroup comprised of FormControls', () => {
+    component.ngOnInit();
+    expect(component.form instanceof FormGroup).toBe(true);
+});
+
   it('#submit should send formgroup to dataService', () => {
   component.form.setValue({
       question: 'test',
@@ -79,7 +84,6 @@ describe('AppComponent', () => {
     fixture.whenStable().then(() => {
       expect(component.submit).toHaveBeenCalled();
       expect(dataServiceSpy).toHaveBeenCalledOnceWith(component.form);
-      expect(component.form).toEqual(dataServiceSpy)
     });
 
   });
