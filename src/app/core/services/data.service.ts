@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import data from './form.json';
-import { Model } from './models/model';
+import data from '../form.json';
+import { Model } from '../models/model';
 
 @Injectable({
   providedIn: 'root'

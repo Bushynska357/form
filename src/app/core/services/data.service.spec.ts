@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 
 import { DataService } from './data.service';
-import { Model,PatientQuestions } from './models/model';
+import { Model,PatientQuestions } from '../models/model';
 
 describe('DataService', () => {
   let service: DataService;
