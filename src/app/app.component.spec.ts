@@ -8,7 +8,6 @@ import { DataService } from './core/services/data.service';
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  let fb: FormBuilder;
 
 
   beforeEach(async () => {
@@ -22,7 +21,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        { provide: DataService}
+        { provide: DataService }
       ]
     }).compileComponents();
   });
@@ -33,12 +32,12 @@ describe('AppComponent', () => {
     component = fixture.componentInstance;
 
     component.form = new FormGroup({
-      question: new FormControl(['', Validators.required]) ,
+      question: new FormControl(['', Validators.required]),
       age: new FormControl(''),
       medicine: new FormControl(''),
       pills: new FormControl(''),
       water: new FormControl(''),
-      answerWater:new FormControl(''),
+      answerWater: new FormControl(''),
     });
 
 
@@ -64,27 +63,19 @@ describe('AppComponent', () => {
   it('should create a FormGroup comprised of FormControls', () => {
     component.ngOnInit();
     expect(component.form instanceof FormGroup).toBe(true);
-});
+  });
 
   it('#submit should send formgroup to dataService', () => {
-  component.form.setValue({
-      question: 'test',
-      age: 35,
-      medicine:  'Nurofen',
-      pills:  '1',
-      water:  '',
-      answerWater: ''
-    })
-
     const dataService = new DataService();
-    const dataServiceSpy = spyOn(dataService, 'sendForm');
+    const dataServiceSpy = spyOn(dataService, 'sendForm').and.callThrough();
+    spyOn(component, 'submit').and.callThrough();
 
     component.submit();
+    expect(component.submit).toHaveBeenCalled();
+    expect(dataService).toBeDefined();
+    expect(dataServiceSpy).toBeDefined();
+    expect(dataServiceSpy).toHaveBeenCalled;
 
-    fixture.whenStable().then(() => {
-      expect(component.submit).toHaveBeenCalled();
-      expect(dataServiceSpy).toHaveBeenCalledOnceWith(component.form);
-    });
 
   });
 

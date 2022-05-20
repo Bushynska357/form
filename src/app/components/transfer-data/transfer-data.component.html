@@ -1,6 +1,5 @@
 <div [formGroup]="form">
 
-  <!-- Age -->
   <ng-container *ngIf="question?.parentAnswer == parentAnswer || !question?.parentAnswer">
     <app-input-type [data]="question" [formGroup]="form"></app-input-type>
 
